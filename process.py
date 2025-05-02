@@ -11,7 +11,7 @@ load_dotenv()
 # Инициализация OpenRouter
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key=os.getenv("OPENROUTER_API_KEY")  # установи в .env
+    api_key=os.getenv("OPENROUTER_API_KEY") # установи в .env
 )
 
 # Путь к папке с транскриптами
@@ -20,6 +20,8 @@ RAW_OUTPUT_DIR = "raw_outputs"
 
 #папка для результатов
 os.makedirs(RAW_OUTPUT_DIR, exist_ok=True)
+
+os.makedirs("logs", exist_ok=True)
 
 
 def extract_video_id(filename):
@@ -73,24 +75,51 @@ def process_file(file_path, video_id):
 
     try:
         response = client.chat.completions.create(
-            model="deepseek/deepseek-prover-v2:free",
+            model="google/gemini-2.0-flash-exp:free",  # временно
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7,
         )
 
-        content = response.choices[0].message.content
+        # Проверки на None и наличие нужных полей
+        if not response:
+            raise ValueError("Пустой ответ от API")
 
-        # Сохраняем в txt файл
+        if not hasattr(response, "choices") or not response.choices:
+            raise ValueError(f"Нет choices в ответе: {response}")
+
+        choice = response.choices[0]
+        if not hasattr(choice, "message") or not choice.message:
+            raise ValueError(f"Нет message в choice: {choice}")
+
+        if not hasattr(choice.message, "content") or not choice.message.content:
+            raise ValueError(f"Нет content в message: {choice.message}")
+
+        content = choice.message.content
+
+        # Сохраняем результат
         output_name = os.path.splitext(os.path.basename(file_path))[0]
         out_path = os.path.join(RAW_OUTPUT_DIR, f"{output_name}.txt")
 
         with open(out_path, "w", encoding="utf-8") as out_f:
             out_f.write(content)
 
+        with open("logs/success.txt", "a", encoding="utf-8") as log_ok:
+            log_ok.write(f"{os.path.basename(file_path)}\n")
+
         return True
 
     except Exception as e:
         print(f"[ERROR] Не удалось обработать {file_path}: {e}")
+        # Логируем весь ответ, если есть
+        try:
+            with open("logs/response_debug.txt", "a", encoding="utf-8") as debug_log:
+                debug_log.write(f"=== {file_path} ===\n")
+                debug_log.write(str(response) + "\n\n")
+        except Exception:
+            pass
+
+        with open("logs/failed.txt", "a", encoding="utf-8") as log_err:
+            log_err.write(f"{os.path.basename(file_path)} — {str(e)}\n")
         return False
 
 
@@ -108,7 +137,7 @@ def main():
         success = process_file(file_path, video_id)
 
         if success:
-            time.sleep(2)  # Не спамим
+            time.sleep(20)  # Не спамим
 
 if __name__ == "__main__":
     main()

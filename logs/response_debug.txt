@@ -1,0 +1,18 @@
+=== transcripts\transcript_-O286efLv2M_20250429_213314.txt ===
+ChatCompletion(id=None, choices=None, created=None, model=None, object=None, service_tier=None, system_fingerprint=None, usage=None, error={'message': 'Rate limit exceeded: free-models-per-day. Add 4.99 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746230400000'}, 'provider_name': None}}, user_id='user_2sKdqtzoLtsFwTPf8rCJmXPrX3X')
+
+=== transcripts\transcript_-rxACfWkoJM_20250429_210623.txt ===
+ChatCompletion(id=None, choices=None, created=None, model=None, object=None, service_tier=None, system_fingerprint=None, usage=None, error={'message': 'Rate limit exceeded: free-models-per-day. Add 4.99 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746230400000'}, 'provider_name': None}}, user_id='user_2sKdqtzoLtsFwTPf8rCJmXPrX3X')
+
+=== transcripts\transcript_-sPpuW6mR2s_20250429_203421.txt ===
+ChatCompletion(id=None, choices=None, created=None, model=None, object=None, service_tier=None, system_fingerprint=None, usage=None, error={'message': 'Rate limit exceeded: free-models-per-day. Add 4.99 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746230400000'}, 'provider_name': None}}, user_id='user_2sKdqtzoLtsFwTPf8rCJmXPrX3X')
+
+=== transcripts\transcript_-SVuZjLLc-E_20250429_204034.txt ===
+ChatCompletion(id=None, choices=None, created=None, model=None, object=None, service_tier=None, system_fingerprint=None, usage=None, error={'message': 'Rate limit exceeded: free-models-per-day. Add 4.99 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746230400000'}, 'provider_name': None}}, user_id='user_2sKdqtzoLtsFwTPf8rCJmXPrX3X')
+
+=== transcripts\transcript_-tv8CB3wJSU_20250429_211747.txt ===
+ChatCompletion(id=None, choices=None, created=None, model=None, object=None, service_tier=None, system_fingerprint=None, usage=None, error={'message': 'Rate limit exceeded: limit_rpm/google/gemini-2.0-flash-exp/78bd9fda-a7c8-4d2e-b65c-e1b0f3a8d9d0. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '4', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746208560000'}, 'provider_name': None}}, user_id='user_2sKdqtzoLtsFwTPf8rCJmXPrX3X')
+
+=== transcripts\transcript_-WiB8wZprCk_20250429_201700.txt ===
+ChatCompletion(id=None, choices=None, created=None, model=None, object=None, service_tier=None, system_fingerprint=None, usage=None, error={'message': 'Rate limit exceeded: limit_rpm/google/gemini-2.0-flash-exp/78bd9fda-a7c8-4d2e-b65c-e1b0f3a8d9d0. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '4', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746208560000'}, 'provider_name': None}}, user_id='user_2sKdqtzoLtsFwTPf8rCJmXPrX3X')
+
