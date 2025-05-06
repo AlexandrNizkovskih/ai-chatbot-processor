@@ -1,6 +1,11 @@
 .venv/
 __pycache__/
+_local_stuff/
 raw_outputs/
+logs/
 *.zip
 *.pyc
 .env
+transcripts/*
+!transcripts/.gitkeep
+base_array.jsonl
